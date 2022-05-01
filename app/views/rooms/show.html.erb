@@ -1,0 +1,71 @@
+<div class = "container room-show">
+  <div class = "row">
+    <div class = "col-md-8">
+      <%= image_tag @room.room_image.url,class:"room-show-image" %>
+      
+    <div class = "room-show-detile">
+      <div class = "room-show-detile-icon">
+      <% if user_signed_in? %>
+        <%= link_to hotels_top_page_path do %>
+        　　<% if @user.image? %>
+        　　<%= image_tag @user.user.image.url,alt:"メニュー",class:"host-icon"  %>
+        　　<% else %>
+        　　<%= image_tag "/assets/default.png",alt:"メニュー",class:"host-icon" %>
+        　　<% end %>
+        <% end %>
+        
+      <% else %>
+        <%= link_to hotels_top_page_path do %>
+        <%= image_tag "/assets/default.png",alt:"メニュー",class:"host-icon" %>
+        <% end %>
+      <% end %>
+      </div>
+      
+      <div class = "room-show-profile">
+        <p class = "room-show-profile-name">
+          <%= @room.room_name %>
+        </p>
+        
+        <p class = "room-show-profile-address">
+          <%= @room.address %>
+        </p>
+       </div>
+    </div>
+    
+      <p class = "room-show-detile-content">
+        <%= @room.room_introduction %>
+      </p>
+    </div>
+    
+    <div class = "col-md-4">
+      <div class = "room-show-nav">
+        <h5 class = "price-icon">
+          <%= number_to_currency(@room.price, :unit => "￥",strip_insignificant_zeros: true) %>/日
+        </h5>
+        
+        <div class = "room-show-date-select">
+          <%= form_with(model: @resevation, url: confirm_resevations_path(@resevation), local: true)  do |f| %>
+          
+            <%= f.label :start_date,"開始日" %>
+            <%= f.date_field :start_date,class:"form-control mb-4", min: Date.current %>
+            
+            <%= f.label :end_date,"終了日" %>
+            <%= f.date_field :end_date,class:"form-control mb-4" %>
+            
+            <%= f.label :number_people,"人数" %>
+            <%= f.number_field :number_people,class:"form-control mb-4" %>
+            
+            <% if user_signed_in? %>
+            <%= f.hidden_field :user_id, value: @user.id %>
+            <%= f.hidden_field :room_id, value: @room.id %>
+            <%= f.submit "予約する",class:"btn btn-primary form-control" %>
+            <% else %>
+            <%= link_to "ログイン",:new_user_session,class:"btn btn-primary form-control" %>
+            <% end %>
+            
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

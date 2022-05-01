@@ -1,0 +1,27 @@
+<div class = "header-inner">
+  <div class = "header-left-nav">
+    <%= link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png"),:hotels_top_page %>
+    
+    <%= form_tag( search_rooms_path,  method: :get) do %>
+    <div class = "header-sharch d-lg-inline-block d-none">
+    <%= text_field_tag :search,"", class:"form-control mb-4", placeholder: "エリア" %>
+    <%= submit_tag  '探す', name: nil, class:"none" %>
+    </div>
+    <% end %>
+    
+    <%= form_tag( search_rooms_path,  method: :get) do %>
+    <div class = "header-sharch d-lg-inline-block d-none">
+    <%= text_field_tag :keyword,"", class:"form-control mb-4", placeholder: "キーワード" %>
+    <%= submit_tag  '探す', name: nil, class:"none" %>
+    </div>
+    <% end %>
+  </div>
+  
+  <div class = "header-right-nav">
+    <div class = "nav-item">
+      <%= link_to "ログイン",:new_user_session, class:"nav-login" %>
+      <%= link_to "登録する",:new_user_registration, class:"nav-register" %>
+    </div>
+  </div>
+</div>
+ 

@@ -1,0 +1,45 @@
+<div class = "header-inner">
+  <div class = "header-left-nav">
+    <%= link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png"),:hotels_top_page %>
+    <%= form_tag( search_rooms_path,  method: :get) do %>
+    <div class = "header-sharch d-lg-inline-block d-none">
+    <%= text_field_tag :search,"", class:"form-control mb-4", placeholder: "エリア" %>
+    <%= submit_tag  '探す', name: nil, class:"none" %>
+    </div>
+    <% end %>
+    
+    <%= form_tag( search_rooms_path,  method: :get) do %>
+    <div class = "header-sharch d-lg-inline-block d-none">
+    <%= text_field_tag :keyword,"", class:"form-control mb-4", placeholder: "キーワード" %>
+    <%= submit_tag  '探す', name: nil, class:"none" %>
+    </div>
+    <% end %>
+  </div>
+  
+  <div class = "header-right-nav">
+    <div class = "user-name">
+     <%= current_user.name %>
+    </div>
+    <div class = "nav-item">
+    <div class = "dropdown">
+    <% if @user.image? %>
+    <button type="button" class="btn" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+      <%= image_tag @user.image.url,alt:"メニュー",class:"host-icon" %>
+    </button>
+    <% else %>
+    <button type="button" class="btn" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+      <%= image_tag "/assets/default.png",alt:"メニュー",class:"host-icon" %>
+    </button>
+    <% end %>
+    
+     <ul class ="dropdown-menu" aria-labelledby="dropdownMenuButton">
+       <li><a class="dropdown-item" href="#"><%= link_to "ルーム登録",new_room_path,class:"menuList" %></a></li>
+       <li><a class="dropdown-item" href="#"><%= link_to "予約済みルーム一覧",resevations_path,class:"menuList" %></a></li>
+       <li><a class="dropdown-item" href="#"><%= link_to "登録済みルーム一覧",rooms_path,class:"menuList" %></a></li>
+       <li><a class="dropdown-item" href="#"><%= link_to "設定",profile_users_path(@user),class:"menuList" %></a></li>
+       <li><a class="dropdown-item" href="#"><%= link_to "ログアウト",destroy_user_session_path,method: :delete,class:"menuList" %></a></li>
+     </ul>
+    </div>
+    </div>
+  </div>
+ 
