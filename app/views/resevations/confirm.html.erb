@@ -1,0 +1,64 @@
+<div class = "container reservations-new">
+  
+  <div class = "row">
+    
+    <div class = "col-6 offset-3">
+      
+      <div class = "reservations-new-nav">
+        
+        <h4 class = "reservations-new-check-content">
+          予約内容確認
+        </h4>
+        
+         <h5 class = "price-icon">
+          <%= number_to_currency(@resevation.room.price, :unit => "￥",strip_insignificant_zeros: true) %>/日
+         </h5>
+        
+        <div class = "reservations-new-date-select">
+         
+          <%= form_with(model: @resevation, class:"new_reservation", local: true) do |f| %>
+
+          <%= f.hidden_field :room_id,value:@room.id %>
+          
+          <%= f.hidden_field :user_id, value:@user.id %>
+          
+          <%= f.label :start_date,"開始日" %>
+          <%= f.text_field :start_date, :readonly => true, class:"form-control mb-4" %>
+            <%= f.hidden_field  :start_date,value:@resevation.start_date %>
+            
+          <%= f.label :end_date,"終了日" %>
+          <%= f.text_field :end_date, :readonly => true, class:"form-control mb-4" %>
+            <%= f.hidden_field  :end_date,value:@resevation.end_date %>
+            
+          <h6 class = "reservations-new-check-content">
+            使用日数：<%= @resevation.total_date %>
+             <%= f.hidden_field  :total_date,value:@resevation.total_date %>
+          </h6>
+          
+          <h6 class = "reservations-new-check-content">
+            人数: <%= @resevation.number_people %>
+            <%= f.hidden_field  :number_people,value:@resevation.number_people %>
+          </h6>
+
+          <%= f.label :total_price,"合計金額" %>
+          <%= f.text_field :total_price, :readonly => true, class:"form-control mb-4" %>
+           <%= f.hidden_field  :total_price,value:@resevation.total_price %>
+           
+          <p class = "reservations-new-check-content">
+            上記内容でよろしければ「予約を確定」を押してください
+          </p>
+          
+          <%= f.submit "予約を確定", class:"btn btn-primary form-control my-3" %>
+         
+          <%= link_to "ルーム詳細に戻る",room_path(@room),class:"btn btn-secondary form-control" %>
+          <% end %>
+          
+        </div>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+  
+</div>

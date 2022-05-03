@@ -1,0 +1,61 @@
+
+
+<div class = "container-fiuld">
+ <div class = "rows">
+   <div class = "users-nav">
+     <ul>
+       <li class = "active"><%= link_to "アカウント",users_account_path(@user),class:"menuList" %></li>
+       <li class = "active"><%= link_to "プロフィール",profile_users_path(@user),class:"menuList" %></li>
+     </ul>
+   </div>
+   
+<div class = "user-view">
+  <div class = "user-view-box">
+    <div class = "update-content">
+      <div class = "row">
+        <h5>プロフィール</h5>
+      </div>
+    </div>
+    
+<%= form_for (@user),html: { class: "edit_user" } do |f| %>
+  <div class="icon-box">
+      <% if @user.image? %>
+      <%= image_tag @user.image.url,alt:"メニュー",class:"host-icon" %>
+      <% else %>
+      <image src="/assets/default.png"class="host-icon"alt="メニュー" %>
+      <% end %>
+  </div>
+  
+  <div class="field">
+    <div class = "row">
+      <%= f.label:image,"アイコン画像",class:"md-4" %>
+      <%= f.file_field:image,class:"col-9" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class = "row">
+      <%= f.label :name, {class: 'md-4'} %>
+      <%= f.text_field :name,class:"form-control",placeholder: "ユーザー名",autofocus: true, autocomplete: "name" %>
+    </div>
+  </div>
+  
+  <div class="field">
+    <div class = "row">
+      <%= f.label :自己紹介, {class: 'md-4'} %>
+      <%= f.text_area :introduction,class:"form-control" %>
+    </div>
+  </div>
+  
+  <div class="update-content">
+    <div class = "row">
+      <%= f.submit "更新",class:"form-control btn-primary my-4" %>
+    </div>
+  </div>
+  
+<% end %>
+  </div>
+</div>
+
+ </div>
+</div>

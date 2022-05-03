@@ -1,0 +1,44 @@
+<div class = "container-fiuld">
+ <div class = "rows">
+  <div class = "users-nav">
+     <ul>
+       <li class = "active"><%= link_to "アカウント",users_account_path(@user),class:"menuList" %></li>
+       <li class = "active"><%= link_to "プロフィール",profile_users_path(@user),class:"menuList" %></li>
+     </ul>
+   </div>
+   
+  <div class = "user-view">
+    <div class = "user-view-box">
+      <div class = "update-content">
+        <div class = "row">
+          <h5>アカウント</h5>
+        </div>
+      </div>
+      
+   <%= form_for (@user),html: { class: "edit_user" } do |f| %>
+   
+    <div class="field">
+      <div class = "row">
+         <%= f.label :メールアドレス, {class: 'md-4'} %>
+         <%= @user.email %>
+      </div>
+    </div>
+    
+    <div class="field">
+      <div class = "row">
+         <%= f.label :パスワード, {class: 'md-4'} %>
+         <%= f.label "********",class:"md-4" %>
+      </div>
+    </div>
+    
+  <div class="update-content">
+     <div class = "row">
+      <%= link_to "編集", edit_user_registration_path(@user),class:"form-control btn-primary my-4" %></li>
+     </div>
+  </div>
+    
+   <% end %>
+    </div>
+   </div>
+ </div>
+</div>

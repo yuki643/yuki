@@ -1,0 +1,240 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+//ここからpostsページ//
+.container-fiuld room-posts {
+  max-width: 100vw;
+  padding: 30px 60px;
+  box-sizing: border-box;
+}
+
+.pb-4 {
+  padding-bottom: 1.5rem!important;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 0;
+  box-sizing: border-box;
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.room-posts table, .reservations table {
+  min-width: 800px;
+  border-collapse: collapse;
+  box-sizing: border-box;
+}
+
+.thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+.room-posts table thead tr {
+  border-top: 1px solid #eaedef;
+  border-bottom: 1px solid #eaedef;
+  box-sizing: border-box;
+}
+
+.room-posts table thead th, .reservations table thead th {
+  padding: 8px 15px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-align: inherit;
+}
+
+.tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+  box-sizing: border-box;
+  border-collapse: collapse;
+}
+td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  display: table-cell;
+  vertical-align: inherit;
+  border-collapse: collapse;
+}
+
+.room-posts table tbody td, .reservations table tbody td {
+  padding: 10px;
+}
+
+.room-posts-image {
+  width: 240px;
+  height: 140px;
+  object-fit: cover;
+}
+
+.posts-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #909090;
+}
+
+.posts-content {
+  max-width: 400px;
+}
+
+//ここまでpostsページ//
+
+//ここからshowページ//
+
+.room-show, .reservations-new {
+  padding: 30px 0;
+}
+
+.col-md-8 {
+  position: relative;
+  width: 70%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.room-show-image, .reservations-new-image {
+  width: 90%;
+  object-fit: cover;
+  vertical-align: middle;
+  border-style: none;
+}
+
+.room-show-detile, .reservations-new-detile {
+  display: flex;
+  align-items: center;
+}
+
+.room-show-detile-icon {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.room-show-profile {
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.room-show-profile-name, .reservations-new-profile-name {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px 0;
+}
+
+.room-show-profile-address, .reservations-new-profile-address {
+  font-size: 14px;
+}
+
+.room-show-detile-content, .reservations-new-detile-content {
+  font-size: 16px;
+  line-height: 30px;
+  padding: 30px 10px;
+  border-top: 1px solid #eaedef;
+  border-bottom: 1px solid #eaedef;
+  word-break: break-all;
+}
+
+.col-md-4 {
+  position: relative;
+  width: 30%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.room-show-nav,  {
+  height: 65%;
+  padding: 20px;
+  border: 1px solid #eaedef;
+}
+
+.h5, h5 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.room-show-date-select, .reservations-new-date-select {
+  padding: 15px 0;
+}
+
+.room-show-date-select label, .reservations-new-date-select label {
+  letter-spacing: 2px;
+  font-size: 14px;
+  margin-bottom: 0.5rem;
+}
+
+input, optgroup, select, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+//ここからsearchページ//
+
+.container-fiuld room {
+  width: 100%;
+  padding: 30px 60px;
+}
+
+.room-frame-inner {
+  border: 1px solid #e2e2e2;
+  margin-bottom: 10px;
+}
+
+.room-image-out {
+  position: relative;
+  width: 100%;
+  background: #F6F8F9;
+  height: 200px;
+}
+
+.room-image {
+  width: 100%;
+  height: 180px;
+  position: absolute;
+  top: 20px;
+  object-fit: cover;
+}
+
+.room-profile {
+  width: 100%;
+  padding: 15px;
+}
+
+.room-profile-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #909090;
+}
+
+.room-profile-city {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.room-profile-price  {
+  text-align: right;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background-color: #4a90e2 !important;
+}
+
+//バリデーション//
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+//バリデーション//

@@ -1,0 +1,59 @@
+// Place all the styles related to the resevations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.reservations-new-nav {
+  height: 100%;
+  padding: 20px;
+  border: 1px solid #eaedef;
+}
+
+.reservations-new-date-select {
+  padding: 15px 0;
+}
+
+.reservations-new-check-content {
+  border-bottom: 1px solid #eaedef;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  font-size: 1rem;
+}
+
+.reservations-new-check-content {
+  border-bottom: 1px solid #eaedef;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+//showページ//
+a {
+  color: #000;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.rowss {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.show-view {
+  box-sizing: border-box;
+  background-color: #F6F8F9;
+  border-left: 2px solid #e2e2e2;
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.user-view-box2 {
+  margin-left: 180px;
+  max-width: 880px;
+  background-color: #fff;
+  border: 1px solid #eaedef;
+  margin: 30px auto;
+  box-sizing: border-box;
+}
